@@ -37,7 +37,7 @@ for file in files:
 
     logging.info(f'File: {file}')
     file_path = path.join(fileloc, file)
-    file_type = magic.from_file(file_path)
+    file_type = magic.from_file(file_path, mime=True)
     if (file_type == 'audio/flac' or file_type == 'audio/mpeg'):
         logging.debug(f'File is {file_type}')
     else:
